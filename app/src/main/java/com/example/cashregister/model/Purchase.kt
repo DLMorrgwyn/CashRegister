@@ -1,3 +1,12 @@
 package com.example.cashregister.model
 
-data class Purchase()
+import java.util.Date
+
+data class Purchase(
+    val id: Int,
+    val name: String,
+    val quantity: Int,
+    val price: Double,
+    val totalPrice: Double,
+    val date: Date = Date()
+)

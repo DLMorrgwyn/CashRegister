@@ -34,7 +34,6 @@ fun AppTopBar(title: String, onBack: (() -> Unit)? = null) {
         )
     )
 }
-
 @Composable
 fun ProductList(
     products: List<Product>,
@@ -52,21 +51,23 @@ fun ProductList(
         }
     }
 }
-
 @Composable
 fun ProductRow(
     product: Product,
     selected: Boolean,
     onClick: () -> Unit
 ) {
-    val background = if (selected) MaterialTheme.colorScheme.secondaryContainer
-    else Color.Transparent
+    val background = if (selected) {
+        MaterialTheme.colorScheme.secondaryContainer
+    } else {
+        Color.Transparent
+    }
     Column(
         modifier = Modifier
-        .fillMaxWidth()
-        .background(background)
-        .clickable(onClick = onClick)
-        .padding(horizontal = 16.dp, vertical = 8.dp)
+            .fillMaxWidth()
+            .background(background)
+            .clickable(onClick = onClick)
+            .padding(horizontal = 16.dp, vertical = 8.dp)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
